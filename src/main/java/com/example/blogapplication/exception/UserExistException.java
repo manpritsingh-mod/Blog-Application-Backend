@@ -1,4 +1,4 @@
-package com.example.blogapplication.service.impl;
+package com.example.blogapplication.exception;
 
 public class UserExistException extends RuntimeException {
     public UserExistException(String message) {

@@ -5,9 +5,10 @@ spring:
   # DATASOURCE CONFIGURATION
 
   datasource:
-    url: jdbc:mysql://localhost:3306/springboot_blogApp_api_db?createDatabaseIfNotExist=true
-    username: root
-    password: root
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:root}
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/blog_api_db?createDatabaseIfNotExist=true}
+
   jpa:
     open-in-view: false
     show-sql: true
@@ -18,3 +19,6 @@ spring:
         format_sql: true
 
 
+app:
+  client:
+    origin: ${CLIENT_ORIGIN:http://localhost:5175}

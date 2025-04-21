@@ -5,5 +5,9 @@ import com.example.blogapplication.entity.User;
 
 public interface UserService {
 
-    public User registerUser(User user);
+    User registerUser(User user);
+
+    User getUserByEmail(String email);
+
+
 }
