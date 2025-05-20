@@ -15,10 +15,11 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                script {
-                    def mvnTool = isUnix() ? 'sh' : 'bat'
-                    "${mvnTool}" 'mvn clean install'
-                }
+                sh 'mvn clean install'
+                // script {
+                //     def mvnTool = isUnix() ? 'sh' : 'bat'
+                //     "${mvnTool}" 'mvn clean install'
+                // }
             }
         }
 
