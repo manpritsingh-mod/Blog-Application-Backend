@@ -38,7 +38,7 @@ pipeline {
         success {
             // echo 'Successfully Build!!'
              slackSend (
-                // channel: 'Jenkins',
+                channel: '@jenkins',
                 color: 'good',
                 message: "*SUCCESS*: Job completed successfully."
             )
@@ -46,7 +46,7 @@ pipeline {
         failure {
             // echo 'Build Failed !!'
             slackSend(
-                // channel: 'Jenkins'
+                channel: '@jenkins'
                 color: 'bad',
                 message: "*FAILURE* Job Failed"
             )
