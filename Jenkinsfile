@@ -15,21 +15,21 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                // bat 'mvn clean install'
-                script {
-                    def mvnTool = isUnix() ? 'sh' : 'bat'
-                    "${mvnTool}" 'mvn clean install'
-                }
+                bat 'mvn clean install'
+                // script {
+                //     def mvnTool = isUnix() ? 'sh' : 'bat'
+                //     "${mvnTool}" 'mvn clean install'
+                // }
             }
         }
 
         stage('Run Tests') {
             steps {
-                // bat 'mvn test'
-                script {
-                    def mvnTool = isUnix() ? 'sh' : 'bat'
-                    "${mvnTool}" 'mvn test'
-                }
+                bat 'mvn test'
+                // script {
+                //     def mvnTool = isUnix() ? 'sh' : 'bat'
+                //     "${mvnTool}" 'mvn test'
+                // }
             }
         }
     }
@@ -37,19 +37,9 @@ pipeline {
     post {
         success {
             echo 'Successfully Build!!'
-            // emailext(
-            //     subject: 'Build Successful: ${JOB_NAME} #${BUILD_NUMBER}',
-            //     body: 'Good job! Build passed.',
-            //     to: 'smanprit022@gmail.com'
-            // )
         }
         failure {
             echo 'Build Failed !!'
-            // emailext(
-            //     subject: 'Build Failed: ${JOB_NAME} #${BUILD_NUMBER}',
-            //     body: 'Oops! Build failed. Please check Jenkins.',
-            //     to: 'smanprit022@gmail.com'
-            // )
         }
     }
 }
