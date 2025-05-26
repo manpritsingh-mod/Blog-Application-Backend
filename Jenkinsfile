@@ -36,18 +36,20 @@ pipeline {
 
     post {
         success {
-            emailext(
-                subject: 'Build Successful: ${JOB_NAME} #${BUILD_NUMBER}',
-                body: 'Good job! Build passed.',
-                to: 'smanprit022@gmail.com'
-            )
+            echo 'Successfully Build!!'
+            // emailext(
+            //     subject: 'Build Successful: ${JOB_NAME} #${BUILD_NUMBER}',
+            //     body: 'Good job! Build passed.',
+            //     to: 'smanprit022@gmail.com'
+            // )
         }
         failure {
-            emailext(
-                subject: 'Build Failed: ${JOB_NAME} #${BUILD_NUMBER}',
-                body: 'Oops! Build failed. Please check Jenkins.',
-                to: 'smanprit022@gmail.com'
-            )
+            echo 'Build Failed !!'
+            // emailext(
+            //     subject: 'Build Failed: ${JOB_NAME} #${BUILD_NUMBER}',
+            //     body: 'Oops! Build failed. Please check Jenkins.',
+            //     to: 'smanprit022@gmail.com'
+            // )
         }
     }
 }
