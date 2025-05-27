@@ -38,20 +38,10 @@ pipeline {
 
     post {
         success {
-            // echo 'Successfully Build!!'
-             slackSend (
-                channel: '@jenkins',
-                color: 'good',
-                message: "*SUCCESS*: Job completed successfully."
-            )
+            echo 'Successfully Build!!'
         }
         failure {
-            // echo 'Build Failed !!'
-            slackSend(
-                channel: '@jenkins'
-                color: 'bad',
-                message: "*FAILURE* Job Failed"
-            )
+            echo 'Build Failed !!'
         }
     }
 }
