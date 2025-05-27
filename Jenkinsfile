@@ -15,23 +15,27 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
+                script{
+                        mvnBuild()
+                }
                 // bat 'mvn clean install'
                 // script {
                 //     def mvnTool = isUnix() ? 'sh' : 'bat'
                 //     "${mvnTool}" 'mvn clean install'
                 // }
-                mvnBuild()
             }
         }
 
         stage('Run Tests') {
             steps {
+                script{
+                        mvnTest()
+                }
                 // bat 'mvn test'
                 // script {
                 //     def mvnTool = isUnix() ? 'sh' : 'bat'
                 //     "${mvnTool}" 'mvn test'
                 // }
-                mvnTest()
             }
         }
     }
