@@ -17,8 +17,9 @@ pipeline {
         stage('Build with Maven') {
             steps {
                 script{
-                      println("Code execute till here")
+                      echo "Starting Maven Build..."
                       mvnBuild()
+                      echo "Maven build finished.."
                 }
                 // bat 'mvn clean install'
                 // script {
