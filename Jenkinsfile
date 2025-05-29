@@ -16,6 +16,7 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
+                println("Code execute till here")
                 script{
                         mvnBuild()
                 }
