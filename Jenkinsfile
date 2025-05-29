@@ -10,13 +10,13 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
+                println("Code execute till here")
                 git 'https://github.com/manpritsingh-mod/Blog-Application-Backend.git'
             }
         }
 
         stage('Build with Maven') {
             steps {
-                println("Code execute till here")
                 script{
                         mvnBuild()
                 }
