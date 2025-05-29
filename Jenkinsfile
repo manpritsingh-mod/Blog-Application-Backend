@@ -11,6 +11,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 git 'https://github.com/manpritsingh-mod/Blog-Application-Backend.git'
+                echo "Clone completed................"
             }
         }
 
